@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/main.css" />
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 1250px)"
+      type="text/css"
+      href="/mobile.css"
+    />
+
+    <title>Home | Forge Federation</title>
+  </head>
+  <body>
+    <header>{% include "nav.html" %}</header>
+    <main class="container">
+      <h1>Forge Federation</h1>
+      <p>
+        Forge Federation is an attempt to bridge various
+        <a href="https://en.wikipedia.org/wiki/Forge_(software)">
+          software forges</a
+        >
+        to provide a decentralised development environment. If successful, major
+        software development workflows like pull requests/patches and
+        bugtrackers participation will be available in a decentralised context.
+      </p>
+      <h2>Why?</h2>
+      <p>
+        Free software developers are asked to choose between freedom and having
+        access to a large community while choosing a
+        <a href="https://en.wikipedia.org/wiki/Forge_(software)"
+          >software forge.</a
+        >. Some are willing to make compromises to their freedom in order in the
+        hopes of developing a community around their project while others don't.
+        Either way, they are compromises.
+        <a href="https://forgefed.peers.community/">ForgeFed</a> was an attempt
+        to brign best of both worlds together but it required the forge
+        developers(GitHub, GitLab, etc.) to participate in the development.
+        Naturally, the tight integration slowed down development.
+      </p>
+      <p>
+        We take a more organic approach towards birdging &#8212; our bridging
+        implementation exists entirely in the API-space
+      </p>
+    </main>
+    {% include "footer.html" %}
+  </body>
+</html>

@@ -1,0 +1,38 @@
+.footer__container {
+	flex-direction: column-reverse;
+	padding-top: 5px;
+}
+
+.footer__link {
+	font-size: 0.6rem;
+}
+
+.license__conatiner,
+.license__link {
+	font-size: 0.55rem;
+	text-align: center;
+}
+
+.footer__column {
+	margin: 1px auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.license__conatiner {
+	display: block;
+}
+
+.footer__column-divider {
+	display: none;
+	margin: 0;
+	padding: 0;
+}
+
+.footer__column-divider--mobile-visible {
+	margin: 0 0px;
+}
+
+.footer__disclaimer {
+	margin: auto;
+}

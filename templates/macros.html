@@ -1,0 +1,91 @@
+{% macro social_link(name) %}
+  {% for var in config.extra.socials %}
+	{% if var.name ==  name %}
+      {{ var.link }}
+	{% endif %}
+  {% endfor %}
+{% endmacro social_link %}
+
+{% macro cache_bust(path) %}
+  {{ get_url(path=path, cachebust=true) }}" 
+{% endmacro cache_bust %}
+
+{% macro social_link_icon(name, icon) %}
+  {% for var in config.extra.socials %}
+    {% if var.name ==  name %}
+	  {% if var.name == "email"  %}
+        <li class="footer__link-container">
+          <a class="footer__link" href="mailto:{{ var.link }}">
+            <img class="footer__icon" src="{{ macros::cache_bust(path=icon) }}" alt="{{ var.name }} icon ">
+          </a>
+		</li>
+	  {% else %}
+		<li class="footer__link-container">
+          <a class="footer__link" rel="noreferrer" href="{{ var.link }}">
+            <img class="footer__icon" src="{{ macros::cache_bust(path=icon) }}" alt="{{ var.name }} icon ">
+          </a>
+		</li>
+	  {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endmacro social_link_icon %}
+
+{% macro get_month(month) %}
+	{% if month == 1 %} January
+	{% elif month == 2 %} February
+	{% elif month == 3 %} March
+	{% elif month == 4 %} April
+	{% elif month == 5 %} May
+	{% elif month == 6 %} June
+	{% elif month == 7 %} July
+	{% elif month == 8 %} August
+	{% elif month == 9 %} September
+	{% elif month == 10 %} October
+	{% elif month == 11 %} November 
+	{% elif month == 12 %} December
+	{% else %} invalid date
+	{% endif %}
+{% endmacro get_month %}
+
+
+{% macro embed_youtube(link) %}
+  {% set id= page.extra.youtube | split(pat="https://www.youtube.com/watch?v=") | nth(n=1) %}
+    <div>
+        <iframe 
+          width="560"
+          height="315"
+          src="https://tube.batsense.net/embed/{{ id }}" 
+		  class="event__youtube"
+          title="YouTube video player" 
+          frameborder="0"
+          allow="picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+    </div>
+{% endmacro embed_youtube %}
+
+{% macro get_meta_tags(title, description) %}
+
+   {% set title = title ~ " :: realaravinth | Aravinth Manivannan " %}
+	<meta charset="UTF-8" />
+	<title>{{ title }}</title>
+	<meta name="referrer" content="no-referrer-when-downgrade" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<meta name="description" content="{{ description }}" />
+    <meta name="author" content="{{ config.extra.author }}" />
+
+	<meta property="og:title" content="{{ title }}" />
+	<meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ config.base_url }}" />
+	<meta property="og:image" content="{{ macros::cache_bust(path='/android-chrome-192x192.png') }}" />
+	<meta property="og:description" content="{{ description }}" />
+	<meta property="og:site_name" content="realaravinth | Aravinth Manivannan" />
+
+{% endmacro get_meta_tags %}
+
+{% macro nav_link(link, name) %}
+  <div class="nav__link-container">
+    <a class="nav__link" rel="noreferrer" href="{{ link }}">{{ name }}</a>
+  </div>
+{% endmacro nav_link %}

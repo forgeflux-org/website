@@ -1,0 +1,93 @@
+/*
+ * Copyright (C) 2021  Aravinth Manivannan <realaravinth@batsense.net>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+@import "./nav/main";
+@import "./footer/main";
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+	font-family: "Inter UI", -apple-system, BlinkMacSystemFont, "Roboto",
+		"Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: rgb(0, 86, 179);
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h2 {
+	padding: 10px 0px;
+}
+
+p {
+	padding: 10px 0;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	color: #323232;
+	height: 100vh;
+	justify-content: space-between;
+}
+
+.container {
+	width: 50%;
+	margin: 10px auto;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	flex: 2;
+}
+
+.banner {
+	height: 350px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+h1 {
+	text-align: center;
+}
+
+.banner > img {
+	margin-top: 20px;
+}
+
+.tagline {
+	text-align: center;
+	padding: 0px;
+}
+
+.banner > .action > button {
+	border: none;
+	background-color: none;
+	background-color: #b4345b;
+	margin-top: 20px;
+	margin-right: 10px;
+	color: #fff;
+	width: 150px;
+	height: 40px;
+}
