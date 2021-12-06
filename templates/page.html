@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block meta %}
+
+{% set description = page.description %}
+{{ macros::get_meta_tags(title=page.title, description=description) }}
+
+{% endblock meta %} {% block content %}
+
+<div class="page__container">
+  <h1 class="page__group-title">{{ page.title }}</h1>
+  <div class="page__group-content">
+    {{ page.content | safe }}
+  </div>
+</div>
+
+{% endblock content %}
