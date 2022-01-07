@@ -33,6 +33,6 @@ jobs:
           folder: ./public
 
       - name: deploy
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' && github.repository == 'forgefedv2/website' }}
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' && github.repository == 'forgeflux-org/website' }}
         run: >-
           curl --location --request POST "https://deploy.batsense.net/api/v1/update" --header 'Content-Type: application/json' --data-raw "{ \"secret\": \"${{ secrets.DEPLOY_TOKEN }}\", \"branch\": \"gh-pages\" }"
