@@ -1,2 +1,12 @@
 @import "./nav/mobile";
 @import "./footer/mobile";
+
+
+.container {
+	width: 80%;
+	margin: 10px auto;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	flex: 2;
+}
