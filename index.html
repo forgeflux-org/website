@@ -69,17 +69,34 @@
         access to a large community while choosing a
         <a href="https://en.wikipedia.org/wiki/Forge_(software)"
           >software forge</a
-        >. Some are willing to make compromises to their freedom in order in the
-        hopes of developing a community around their project while others don't.
-        Either way, these are compromises.
-        <a href="https://forgefed.peers.community/">ForgeFed</a> was an attempt
-        to bring the best of both worlds together, but it required the forge
-        developers (GitHub, GitLab, etc.) to participate in the development.
-        Naturally, the tight integration slowed down development.
+        >. Some are willing to make compromises to their freedom in the hopes of
+        developing a community around their project while others don't. Either
+        way, these are compromises.
       </p>
       <p>
-        We take a more organic approach towards bridging &#8212; our bridging
-        implementation exists entirely in the API-space.
+        <a href="https://forgefed.peers.community/">ForgeFed</a> is an attempt
+        to bring the best of both worlds together, but implementing the current
+        version requires tight integration with forge (GitHub, GitLab, etc.)
+        internals which, on non-free forges, requries the forge developers to
+        participate in federation development. Naturally, getting non-free
+        forges to implement the specification is a very challenging task.
+      </p>
+      <p>
+        With ForgeFlux, we take a more organic approach towards federation
+        &#8212; our federation implementation exists entirely in the API-space.
+        So it can be implemented for any forge, as long as the forge exposes a
+        stable API.
+      </p>
+      <h2>How?</h2>
+      <p>
+        ForgeFlux will provide federation as a plugin for forge instances: it
+        will act as an adaptor that will enable federation on forge instances by
+        running alongside the forge instance. The deployment architecture is
+        very similar to how a third-party integration like
+        <a href="https://woodpecker-ci.org/">Woodpecker CI</a> works with
+        <a href="https://gitea.io">Gitea</a> &#8212; deploy ForgeFlux next to a
+        forge instance and configure authentication to enable federation on the
+        forge instance.
       </p>
     </main>
     <footer>
