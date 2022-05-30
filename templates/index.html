@@ -18,7 +18,9 @@
     <main class="container">
       <h1>ForgeFlux</h1>
       <p>
-        ForgeFlux is an attempt to bridge various
+        ForgeFlux is an attempt at implementing
+        <a href="https://forgefed.peers.community">ForgeFed</a>
+        external to
         <a href="https://en.wikipedia.org/wiki/Forge_(software)">
           software forges</a
         >
@@ -37,30 +39,81 @@
         way, these are compromises.
       </p>
       <p>
-        <a href="https://forgefed.peers.community/">ForgeFed</a> is an attempt
-        to bring the best of both worlds together, but implementing the current
-        version requires tight integration with forge (GitHub, GitLab, etc.)
-        internals which, on non-free forges, requries the forge developers to
-        participate in federation development. Naturally, getting non-free
-        forges to implement the specification is a very challenging task.
+        Additionally, participating in Free Software projects require creating
+        and configuring accounts on the forge instances that the projects use.
+        Maintaining multiple accounts is a time-consuming process.
       </p>
       <p>
-        With ForgeFlux, we take a more organic approach towards federation
-        &#8212; our federation implementation exists entirely in the API-space.
-        So it can be implemented for any forge, as long as the forge exposes a
-        stable API.
+        A mechanism to enable developers on independently run forge instances to
+        interact with other forge instances using a single account would solve
+        the issues that mentioned above.
+        <a href="https://forgefed.peers.community/">ForgeFed</a> is an attempt
+        to do just that. But implementing native support for ForgeFed will
+        require changes to the forge's source code, which we find to be a
+        time-consuming process.
+      </p>
+      <p>
+        ForgeFlux will implement ForgeFed external to the forges, using the
+        forge's HTTP APIs. Officially, external federation for Gitea, SourceHut,
+        GitLab and GitHub will be implemented but the project will also provide
+        tools and guidelines to implement federation for unsupported forges.
       </p>
       <h2>How?</h2>
       <p>
-        ForgeFlux will provide federation as a plugin for forge instances: it
-        will act as an adaptor that will enable federation on forge instances by
-        running alongside the forge instance. The deployment architecture is
-        very similar to how a third-party integration like
+        ForgeFlux will act as an adaptor that will enable federation on forge
+        instances by running alongside the forge instances. The deployment
+        architecture is very similar to how a third-party integration like
         <a href="https://woodpecker-ci.org/">Woodpecker CI</a> works with
         <a href="https://gitea.io">Gitea</a> &#8212; deploy ForgeFlux next to a
         forge instance and configure authentication to enable federation on the
         forge instance.
       </p>
+      <p>
+        ForgeFlux software is made-up of multiple components, each of which
+        makes up for the lack of native federation features in supported forges:
+      </p>
+
+      <ol>
+        <li>
+          <h3>Interface: Federation Adaptor</h3>
+          <p>
+            Interface uses data received from Forge APIs to provide an interface
+            that supports ForgeFed. It includes tools and mechanisms to
+            implement support for forges that are not Officially supported by
+            ForgeFlux.
+          </p>
+        </li>
+
+        <li>
+          <h3>Northstar: Forge-Interface Discovery service</h3>
+          <p>
+            ForgeFlux allows for multiple interfaces to be run against a single
+            software forge. Also, the protocol is flexible enough to support
+            multiple types of software forges(GitLab, GitHub, etc). The
+            protocol's decentralised nature makes it impossible to create a
+            reliable record of which interfaces service which forges.
+          </p>
+          <p>
+            So we created a discovery service which stores records of interfaces
+            and the forges they service. This is very similar to the way DNS
+            works. In DNS, hostname is resolved to IP address. Here, software
+            forge URL is resolved to URLs of interfaces that service the queried
+            forge.
+          </p>
+        </li>
+        <li>
+          <h3>Starchart: Federated Repository Explorer</h3>
+          <p>
+            Forges provide means for exploring projects that are hosted on the
+            forge instance. The federated forge ecosystem needs something
+            similar. Starchart solves this problem by crawling the federated
+            forge ecosystem(the forge admins will have to authorize crawling)
+            and publishing the data for for indexing by search engines and also
+            by providing a centralized service to people to explore projects on
+            the federated ecosystem.
+          </p>
+        </li>
+      </ol>
     </main>
     {% include "footer.html" %}
   </body>
