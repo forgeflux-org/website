@@ -14,12 +14,14 @@
     <title>Home | ForgeFlux</title>
   </head>
   <body>
-    <header><nav class="nav__container">
+    <header>
+      <nav class="nav__container">
   <input type="checkbox" class="nav__toggle" id="nav__toggle" />
 
   <div class="nav__header">
     <a class="nav__logo-container" href="/">
-      <p class="nav__home-btn">>ForgeFlux</p>
+      <img class="nav__logo" src="/logo-thumbnail.png" alt="ForgeFlux logo">
+      <p class="nav__home-btn">ForgeFlux</p>
     </a>
     <label class="nav__hamburger-menu" for="nav__toggle">
       <span class="nav__hamburger-inner"></span>
@@ -29,6 +31,11 @@
   <div class="nav__spacer"></div>
 
   <div class="nav__link-group">
+    
+  <div class="nav__link-container">
+    <a class="nav__link" rel="noreferrer" href="&#x2F;about">About</a>
+  </div>
+ 
     
   <div class="nav__link-container">
     <a class="nav__link" rel="noreferrer" href="&#x2F;community">Community</a>
@@ -51,106 +58,102 @@
 
   </div>
 </nav>
-</header>
+
+      <div class="banner__container">
+        <div class="banner__content-container">
+          <h1>ForgeFlux</h1>
+          <p>
+            API-space software forge federation for Gitea, Sourcehut, GitLab and
+            GitHub
+          </p>
+        </div>
+      </div>
+    </header>
     <main class="container">
-      <h1>ForgeFlux</h1>
-      <p>
-        ForgeFlux is an attempt at implementing
-        <a href="https://forgefed.peers.community">ForgeFed</a>
-        external to
-        <a href="https://en.wikipedia.org/wiki/Forge_(software)">
-          software forges</a
-        >
-        to provide a decentralised development environment. If successful, major
-        software development workflows like pull requests/patches and bug
-        trackers will be available in a decentralised context.
-      </p>
-      <h2>Why?</h2>
-      <p>
-        Free software developers are asked to choose between freedom and having
-        access to a large community while choosing a
-        <a href="https://en.wikipedia.org/wiki/Forge_(software)"
-          >software forge</a
-        >. Some are willing to make compromises to their freedom in the hopes of
-        developing a community around their project while others don't. Either
-        way, these are compromises.
-      </p>
-      <p>
-        Additionally, participating in Free Software projects require creating
-        and configuring accounts on the forge instances that the projects use.
-        Maintaining multiple accounts is a time-consuming process.
-      </p>
-      <p>
-        A mechanism to enable developers on independently run forge instances to
-        interact with other forge instances using a single account would solve
-        the issues that mentioned above.
-        <a href="https://forgefed.peers.community/">ForgeFed</a> is an attempt
-        to do just that. But implementing native support for ForgeFed will
-        require changes to the forge's source code, which we find to be a
-        time-consuming process.
-      </p>
-      <p>
-        ForgeFlux will implement ForgeFed external to the forges, using the
-        forge's HTTP APIs. Officially, external federation for Gitea, SourceHut,
-        GitLab and GitHub will be implemented but the project will also provide
-        tools and guidelines to implement federation for unsupported forges.
-      </p>
-      <h2>How?</h2>
-      <p>
-        ForgeFlux will act as an adaptor that will enable federation on forge
-        instances by running alongside the forge instances. The deployment
-        architecture is very similar to how a third-party integration like
-        <a href="https://woodpecker-ci.org/">Woodpecker CI</a> works with
-        <a href="https://gitea.io">Gitea</a> &#8212; deploy ForgeFlux next to a
-        forge instance and configure authentication to enable federation on the
-        forge instance.
-      </p>
-      <p>
-        ForgeFlux software is made-up of multiple components, each of which
-        makes up for the lack of native federation features in supported forges:
-      </p>
 
-      <ol>
-        <li>
-          <h3>Interface: Federation Adaptor</h3>
-          <p>
-            Interface uses data received from Forge APIs to provide an interface
-            that supports ForgeFed. It includes tools and mechanisms to
-            implement support for forges that are not Officially supported by
-            ForgeFlux.
-          </p>
-        </li>
+      <section class="home__vision-container">
+  <p class="home__vision-text">
+  <em class="home__vision-title">Imagine a world...</em><br />
 
-        <li>
-          <h3>Northstar: Forge-Interface Discovery service</h3>
-          <p>
-            ForgeFlux allows for multiple interfaces to be run against a single
-            software forge. Also, the protocol is flexible enough to support
-            multiple types of software forges(GitLab, GitHub, etc). The
-            protocol's decentralised nature makes it impossible to create a
-            reliable record of which interfaces service which forges.
-          </p>
-          <p>
-            So we created a discovery service which stores records of interfaces
-            and the forges they service. This is very similar to the way DNS
-            works. In DNS, hostname is resolved to IP address. Here, software
-            forge URL is resolved to URLs of interfaces that service the queried
-            forge.
-          </p>
-        </li>
-        <li>
-          <h3>Starchart: Federated Repository Explorer</h3>
-          <p>
-            Forges provide means for exploring projects that are hosted on the
-            forge instance. The federated forge ecosystem needs something
-            similar. Starchart solves this problem by crawling the federated
-            forge ecosystem(the forge admins will have to authorize crawling)
-            and publishing the data for for indexing by search engines and also
-            by providing a centralized service to people to explore projects on
-            the federated ecosystem.
-          </p>
-        </li>
-      </ol>
+    <span class="home__vision-text-line">
+      ...where software development workflows are based on truly open standards.<br />
+    </span>
+
+    <span class="home__vision-text-line">
+      ...where you can choose who hosts your code while still interacting with the larger community.<br />
+    </span>
+
+    <span class="home__vision-text-line">
+      ...where freedom doesn't come at the cost of comfort and reliability.<br />
+    </span>
+
+    <span class="home__vision-text-line">
+      ...where Free Software developers are treated just as fairly as they treat their users.<br />
+    </span>
+  </p>
+
+  <div class="home__vision-action-container">
+    <h2 class="home__vision-intro-title">Meet ForgeFlux</h2>
+    <p class="home__vision-intro-tagline">
+      Where <a href="https://en.wikipedia.org/wiki/Forge_(software)">software forges</a>
+      are freed with external, API-space federation adapters.
+    </p>
+    <div>
+      <button class="home__vision-aciton-btn">
+        <a href="/about" class="home__vision-action-link">Learn More</a>
+      </button>
+    </div>
+  </div>
+</section>
+
+      <section class="home__features">
+    <h2>Supported Software Forges</h2>
+    <div class="supported-forges__logo-container">
+      <a class="supported-forges__links" href="https://gitea.io">
+        <img
+          class="supported-forges__logo"
+          src="/forges/gitea.svg"
+          alt="Gitea logo"
+      /></a>
+
+      <a class="supported-forges__links" href="https://sr.ht">
+        <img
+          class="supported-forges__logo"
+          src="/forges/sourcehut.svg"
+          alt="SourceHut logo"
+      /></a>
+      <a class="supported-forges__links" href="https://gitlab.com">
+        <img
+          class="supported-forges__logo"
+          src="/forges/gitlab.svg"
+          alt="GitLab logo"
+      /></a>
+      <a class="supported-forges__links" href="https://github.com">
+        <img
+          class="supported-forges__logo"
+          src="/forges/github.png"
+          alt="GitHub logo"
+      /></a>
+    </div>
+
+  <div class="home__features-content">
+
+    <ul>
+      <li>Gitea(WIP)</li>
+      <li>Sourcehut</li>
+      <li>GitLab</li>
+      <li>GitHub</li>
+    </ul>
+    <p>
+      ForgeFlux will implement external federation support for the following
+      software forges: The project is highly modular and aims for maximum
+      interoperability, so implementing support for other forges should be
+      possible.
+    </p>
+  </div>
+</section>
+
+
     </main>
     <footer>
   <div class="footer__container">

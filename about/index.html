@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="https://forgeflux.org/main.css" />
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 768px)"
+      href="https://forgeflux.org/mobile.css"
+    />
+
+	<meta name="referrer" content="no-referrer-when-downgrade" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    
+
+
+
+
+   
+	<meta charset="UTF-8" />
+	<title>About :: realaravinth | Aravinth Manivannan </title>
+	<meta name="referrer" content="no-referrer-when-downgrade" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<meta name="description" content="About ForgeFlux - A project that is involved in software forgefederation" />
+
+	<meta property="og:title" content="About :: realaravinth | Aravinth Manivannan " />
+	<meta property="og:type" content="article" />
+    <meta property="og:url" content="https:&#x2F;&#x2F;forgeflux.org" />
+	<meta property="og:description" content="About ForgeFlux - A project that is involved in software forgefederation" />
+	<meta property="og:site_name" content="realaravinth | Aravinth Manivannan" />
+
+
+
+
+  </head>
+  <body class="base">
+    <header>
+      <nav class="nav__container">
+  <input type="checkbox" class="nav__toggle" id="nav__toggle" />
+
+  <div class="nav__header">
+    <a class="nav__logo-container" href="/">
+      <img class="nav__logo" src="/logo-thumbnail.png" alt="ForgeFlux logo">
+      <p class="nav__home-btn">ForgeFlux</p>
+    </a>
+    <label class="nav__hamburger-menu" for="nav__toggle">
+      <span class="nav__hamburger-inner"></span>
+    </label>
+  </div>
+
+  <div class="nav__spacer"></div>
+
+  <div class="nav__link-group">
+    
+  <div class="nav__link-container">
+    <a class="nav__link" rel="noreferrer" href="&#x2F;about">About</a>
+  </div>
+ 
+    
+  <div class="nav__link-container">
+    <a class="nav__link" rel="noreferrer" href="&#x2F;community">Community</a>
+  </div>
+ 
+    
+  <div class="nav__link-container">
+    <a class="nav__link" rel="noreferrer" href="https:&#x2F;&#x2F;docs.forgeflux.org">Docs</a>
+  </div>
+ 
+    
+  <div class="nav__link-container">
+    <a class="nav__link" rel="noreferrer" href="https:&#x2F;&#x2F;forum.forgefriends.org&#x2F;c&#x2F;forgeflux&#x2F;28">Forum</a>
+  </div>
+
+    
+  <div class="nav__link-container">
+    <a class="nav__link" rel="noreferrer" href="https:&#x2F;&#x2F;github.com&#x2F;forgeflux-org">Source Code</a>
+  </div>
+
+  </div>
+</nav>
+
+    </header>
+    <!-- See ../sass/main.scss. Required for pushing footer to the very 
+      bottom of the page -->
+      <main class="container">
+        
+
+<div class="page__container">
+  <h1 class="page__group-title">About</h1>
+  <div class="page__group-content">
+    <p>ForgeFlux is an attempt at implementing
+<a href="https://forgefed.peers.community%22">ForgeFed</a>
+external to
+<a href="https://en.wikipedia.org/wiki/Forge_(software)">Forges</a>
+to provide a decentralised development environment. If successful, major
+software development workflows like pull requests/patches and bug
+trackers will be available in a decentralised context.</p>
+<h2 id="why">Why</h2>
+<p>Free software developers are asked to choose between freedom and having
+access to a large community while choosing a
+<a href="https://en.wikipedia.org/wiki/Forge_(software)">software forge</a>
+Some are willing to make compromises to their freedom in the hopes of
+developing a community around their project while others don't. Either
+way, these are compromises.</p>
+<p>Additionally, participating in Free Software projects require creating
+and configuring accounts on the forge instances that the projects use.
+Maintaining multiple accounts is a time-consuming process.</p>
+<p>A mechanism to enable developers on independently run forge instances to
+interact with other forge instances using a single account would solve
+the issues that mentioned above.
+<a href="https://forgefed.peers.community/">ForgeFed</a> is an attempt
+to do just that. But implementing native support for ForgeFed will
+require changes to the forge's source code, which we find to be a
+time-consuming process.</p>
+<p>ForgeFlux will implement ForgeFed external to the forges, using the
+forge's HTTP APIs. Officially, external federation for Gitea, SourceHut,
+GitLab and GitHub will be implemented but the project will also provide
+tools and guidelines to implement federation for unsupported forges.</p>
+<h2 id="how">How?</h2>
+<p>ForgeFlux will act as an adaptor that will enable federation on forge
+instances by running alongside the forge instances. The deployment
+architecture is very similar to how a third-party integration like
+<a href="https://woodpecker-ci.org/">Woodpecker CI</a> works with
+<a href="https://gitea.com">Gitea</a> deploy ForgeFlux next to a
+forge instance and configure authentication to enable federation on the
+forge instance.</p>
+<p>ForgeFlux software is made-up of multiple components, each of which
+makes up for the lack of native federation features in supported forges:</p>
+<h2 id="components">Components</h2>
+<h3 id="interface-federation-adaptor">Interface: Federation Adaptor</h3>
+<p>Interface uses data received from Forge APIs to provide an interface
+that supports ForgeFed. It includes tools and mechanisms to
+implement support for forges that are not Officially supported by
+ForgeFlux.</p>
+<h3 id="northstar-forge-interface-discovery-service">Northstar: Forge-Interface Discovery service</h3></h3>
+<p>ForgeFlux allows for multiple interfaces to be run against a single
+software forge. Also, the protocol is flexible enough to support
+multiple types of software forges(GitLab, GitHub, etc). The
+protocol's decentralised nature makes it impossible to create a
+reliable record of which interfaces service which forges.</p>
+<p>So we created a discovery service which stores records of interfaces
+and the forges they service. This is very similar to the way DNS
+works. In DNS, hostname is resolved to IP address. Here, software
+forge URL is resolved to URLs of interfaces that service the queried
+forge.</p>
+<h3 id="starchart-federated-repository-explorer">Starchart: Federated Repository Explorer</h3></h3>
+<p>Forges provide means for exploring projects that are hosted on the
+forge instance. The federated forge ecosystem needs something
+similar. Starchart solves this problem by crawling the federated
+forge ecosystem(the forge admins will have to authorize crawling)
+and publishing the data for for indexing by search engines and also
+by providing a centralized service to people to explore projects on
+the federated ecosystem.</p>
+
+  </div>
+</div>
+
+
+      </main>
+      <footer>
+  <div class="footer__container">
+    <div class="footer__column">
+      <span class="license__conatiner">
+        All text &nbsp;
+        <a
+          class="license__link"
+          rel="noreferrer"
+          rel="noreferrer"
+          href="http://creativecommons.org/licenses/by-sa/4.0/"
+          target="_blank"
+          >CC-BY-SA</a
+        >
+        &nbsp;&amp; code&nbsp;
+        <a
+          class="license__link"
+          rel="noreferrer"
+          href="https://www.gnu.org/licenses/agpl-3.0.en.html"
+          target="_blank"
+          >AGPL</a
+        >
+        <span class="footer__column-divider--mobile-visible">|</span>
+        <a
+          class="license__link"
+          rel="noreferrer"
+          href="https://www.eff.org/issues/do-not-track/amp/"
+          target="_blank"
+          >No AMP</a
+        >
+      </span>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>
