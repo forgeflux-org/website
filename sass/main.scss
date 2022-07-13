@@ -16,6 +16,8 @@
  */
 @import "./nav/main";
 @import "./footer/main";
+@import "./home/vision/main";
+@import "./home/supported-forges/main";
 
 * {
 	margin: 0;
@@ -90,4 +92,29 @@ h1 {
 	color: #fff;
 	width: 150px;
 	height: 40px;
+}
+
+.banner__container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background: #ed332e;
+	height: 350px;
+	color: #fff !important;
+	font-size: 2rem;
+}
+
+.banner__content-container {
+	margin: auto;
+}
+
+
+.home__features {
+	display: flex;
+	flex-direction: column;
+	height: 80vh;
+	justify-content: space-around;
+	h2 {
+		text-align: left;
+	}
 }

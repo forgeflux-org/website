@@ -10,7 +10,7 @@ images: []
 ForgeFlux is an attempt at implementing
 [ForgeFed](https://forgefed.peers.community")
 external to
-[Forges](<href="https://en.wikipedia.org/wiki/Forge_(software)>)
+[Forges](https://en.wikipedia.org/wiki/Forge_(software))
 to provide a decentralised development environment. If successful, major
 software development workflows like pull requests/patches and bug
 trackers will be available in a decentralised context.
@@ -19,7 +19,7 @@ trackers will be available in a decentralised context.
 
 Free software developers are asked to choose between freedom and having
 access to a large community while choosing a
-[software forge](<https://en.wikipedia.org/wiki/Forge_(software)>)
+[software forge](https://en.wikipedia.org/wiki/Forge_(software))
 Some are willing to make compromises to their freedom in the hopes of
 developing a community around their project while others don't. Either
 way, these are compromises.
@@ -31,7 +31,7 @@ Maintaining multiple accounts is a time-consuming process.
 A mechanism to enable developers on independently run forge instances to
 interact with other forge instances using a single account would solve
 the issues that mentioned above.
-[ForgeFed](https://forgefed.peers.community/") is an attempt
+[ForgeFed](https://forgefed.peers.community/) is an attempt
 to do just that. But implementing native support for ForgeFed will
 require changes to the forge's source code, which we find to be a
 time-consuming process.

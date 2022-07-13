@@ -1,0 +1,17 @@
+.home__forges-container {
+	display: flex;
+	align-items: center;
+	height: 200px;
+	justify-content: space-between;
+}
+.supported-forges__logo-container {
+	display: flex;
+	width: 100%;
+}
+
+.supported-forges__links {
+	margin: auto;
+}
+.supported-forges__logo {
+	height: 100px;
+}

@@ -1,12 +1,33 @@
 @import "./nav/mobile";
 @import "./footer/mobile";
-
+@import "./home/vision/mobile";
+@import "./home/supported-forges/mobile";
 
 .container {
-	width: 80%;
+	width: 90%;
 	margin: 10px auto;
 	background-color: #fff;
 	display: flex;
 	flex-direction: column;
 	flex: 2;
+}
+
+.banner__container {
+	font-size: 1.5rem;
+	margin: auto;
+}
+.banner__content-container {
+	margin: auto;
+	text-align: center;
+}
+
+.page__container,
+.page__group-content {
+	width: 100%;
+	margin: auto;
+}
+
+
+.home__features {
+	height: auto;
 }
