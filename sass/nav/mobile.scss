@@ -15,9 +15,19 @@ $nav__hamburger-inner-height: 1.3px;
   justify-content: space-between;
 }
 
+.nav__link-container {
+	width: 70%;
+	border-bottom: 1px dashed rgba(55, 55, 55, 0.4);
+}
+
+.nav__link-container:last-child {
+	border-bottom: none;
+}
+
 .nav__link-group {
   position: sticky;
   flex-direction: column;
+	width: 100%;
 //  background-color: $light-blue;
 }
 

@@ -5,7 +5,8 @@
 
   <div class="nav__header">
     <a class="nav__logo-container" href="/">
-      <p class="nav__home-btn">>ForgeFlux</p>
+      <img class="nav__logo" src="/logo-thumbnail.png" alt="ForgeFlux logo">
+      <p class="nav__home-btn">ForgeFlux</p>
     </a>
     <label class="nav__hamburger-menu" for="nav__toggle">
       <span class="nav__hamburger-inner"></span>
@@ -15,6 +16,7 @@
   <div class="nav__spacer"></div>
 
   <div class="nav__link-group">
+    {{ macros::nav_link(link="/about", name="About") }} 
     {{ macros::nav_link(link="/community", name="Community") }} 
     {{ macros::nav_link(link="https://docs.forgeflux.org", name="Docs") }} 
     {{ macros::nav_link(link="https://forum.forgefriends.org/c/forgeflux/28", name="Forum") }}
